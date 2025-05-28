@@ -192,10 +192,15 @@
 
             <!-- Logo -->
             @auth
-            <a class="navbar-brand me-auto mb-2 mb-lg-0 " href="{{ route("profile") }}"><i class="bi bi-person-circle"> <span>Profile</span></i></a>
+            <a class="navbar-brand me-auto mb-2 mb-lg-0 " href="{{ route("profile") }}">
+              <i class="bi bi-person-circle"> 
+                <!-- <span>Profile</span> -->
+            </i></a>
 
             @endauth
-            <a class="navbar-brand me-auto mb-2 mb-lg-0 ms-3" href="{{ url('/') }}">Book System</a>
+            <!-- <a class="navbar-brand me-auto mb-2 mb-lg-0 ms-3" href="{{ url('/') }}">Book System</a> -->
+             <a class="navbar-brand me-auto mb-2 mb-lg-0 ms-3" href="{{ url('/') }}" style="font-size: 1rem;">Book System</a>
+
 
             <!-- Toggle button for mobile -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -224,7 +229,7 @@
                 <!-- Right Content: Search & Auth Buttons -->
                 <div class="d-flex align-items-center gap-2">
 
-                    {{-- Search Form (only show on books.index route) --}}
+                    <!-- {{-- Search Form (only show on books.index route) --}} -->
                     @if (Route::is('books.index'))
                         <form action="{{ route('books.index') }}" method="GET" class="d-flex me-2">
                             <input type="text" name="search" class="form-control me-2"
@@ -233,7 +238,7 @@
                         </form>
                     @endif
 
-                    {{-- Auth Buttons --}}
+                    <!-- {{-- Auth Buttons --}} -->
                     @if (Route::has('login'))
                         @auth
                             <form method="POST" action="{{ route('logout') }}">
